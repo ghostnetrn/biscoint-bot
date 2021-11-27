@@ -343,11 +343,13 @@ const adjustAmount = async () => {
     if (amountBTC >= 0.0001 && amountBTC > amountBRL) {
       amount = amountBTC;
       initialSell = true; // initial sell
-      bot.telegram.sendMessage(botchat, `💵 *Valor em operação*: ${amount}`, keyboard)
+      bot.telegram.sendMessage(botchat, `💵 *Valor em operação*: ${amount}
+      *O bot utiliza 90% do saldo em BTC ou BRL`, keyboard)
     } else {
       initialSell = false // initial buy
       amount = amountBRL
-      bot.telegram.sendMessage(botchat, `💵 *Valor em operação*: ${amount}`, keyboard)
+      bot.telegram.sendMessage(botchat, `💵 *Valor em operação*: ${amount}
+      *O bot utiliza 90% do saldo em BTC ou BRL`, keyboard)
     }
   } catch (error) {
     handleMessage(JSON.stringify(error));
