@@ -45,6 +45,7 @@ bot.hears('📖 Help', async (ctx) => {
   *☸ Configs:* Configurações do Bot.\n
   *🔛 Test Mode:* Ativar/Desativar modo simulação.\n
   *₿:* Acessar a corretora.\n
+  *ℹ️:* O bot irá utilizar 90% do saldo em BTC ou BRL para as operações de compra/venda
       ============
       `, keyboard)
 }
