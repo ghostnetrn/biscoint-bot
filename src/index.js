@@ -3,7 +3,6 @@ import Bottleneck from "bottleneck";
 import { handleMessage, handleError, percent } from "./utils";
 //import config from "./config.js";
 import { Telegraf, Markup } from 'telegraf';
-const pjson = require("../package.json")
 
 //let { amount, initialSell, intervalMs, test, differencelogger } = config;
 
@@ -79,7 +78,6 @@ bot.hears('☸ Configs', (ctx) => {
 ⏱️ *Intervalo*: ${intervalMs}ms
 ℹ️ *Modo teste*: ${test ? 'ativado' : 'desativado'}
 ℹ️ *InitialSell*: ${initialSell ? 'ativado' : 'desativado'}
-ℹ️ *Versão API*: ${pjson.version}
 💵 *Valor em operação*: ${amount}
 *O bot utiliza 90% do saldo em BTC ou BRL 
     `, keyboard)
