@@ -3,7 +3,7 @@ import Bottleneck from "bottleneck";
 import { handleMessage, handleError, percent } from "./utils";
 //import config from "./config.js";
 import { Telegraf, Markup } from 'telegraf';
-import pjson from "../package.json"
+import { dependencies } from "../package.json"
 
 //let { amount, initialSell, intervalMs, test, differencelogger } = config;
 
@@ -79,8 +79,8 @@ bot.hears('☸ Configs', (ctx) => {
 ⏱️ *Intervalo*: ${intervalMs}ms
 ℹ️ *Modo teste*: ${test ? 'ativado' : 'desativado'}
 ℹ️ *InitialSell*: ${initialSell ? 'ativado' : 'desativado'}
-ℹ️ *Versão API*: ${pjson.dependencies.biscoint-api-node}
-💵 *Valor em operação*: ${amount}
+ℹ️ *Versão API*: ${dependencies.biscoint-api-node}
+💵 *Valor em operação*: ${amount} 
     `, keyboard)
 }
 );
