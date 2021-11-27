@@ -3,6 +3,7 @@ import Bottleneck from "bottleneck";
 import { handleMessage, handleError, percent } from "./utils";
 //import config from "./config.js";
 import { Telegraf, Markup } from 'telegraf';
+import pjson from "../package.json"
 
 //let { amount, initialSell, intervalMs, test, differencelogger } = config;
 
@@ -79,7 +80,6 @@ bot.hears('☸ Configs', (ctx) => {
 ℹ️ *Modo teste*: ${test ? 'ativado' : 'desativado'}
 ℹ️ *InitialSell*: ${initialSell ? 'ativado' : 'desativado'}
 💵 *Valor em operação*: ${amount}
-*O bot utiliza 90% do saldo em BTC ou BRL 
     `, keyboard)
 }
 );
@@ -343,13 +343,11 @@ const adjustAmount = async () => {
     if (amountBTC >= 0.0001 && amountBTC > amountBRL) {
       amount = amountBTC;
       initialSell = true; // initial sell
-      bot.telegram.sendMessage(botchat, `💵 *Valor em operação*: ${amount}
-      *O bot utiliza 90% do saldo em BTC ou BRL`, keyboard)
+      bot.telegram.sendMessage(botchat, `💵 *Valor em operação*: ${amount}`, keyboard)
     } else {
       initialSell = false // initial buy
       amount = amountBRL
-      bot.telegram.sendMessage(botchat, `💵 *Valor em operação*: ${amount}
-      *O bot utiliza 90% do saldo em BTC ou BRL`, keyboard)
+      bot.telegram.sendMessage(botchat, `💵 *Valor em operação*: ${amount}`, keyboard)
     }
   } catch (error) {
     handleMessage(JSON.stringify(error));
