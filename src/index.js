@@ -80,7 +80,7 @@ bot.hears('☸ Configs', (ctx) => {
 ⏱️ *Intervalo*: ${intervalMs}ms
 ℹ️ *Modo teste*: ${test ? 'ativado' : 'desativado'}
 ℹ️ *InitialSell*: ${initialSell ? 'ativado' : 'desativado'}
-ℹ️ *Versão API*: ${version}
+ℹ️ *Versão API*: ${JSON.parse(version)}
 💵 *Valor em operação*: ${amount}
 *O bot utiliza 90% do saldo em BTC ou BRL 
     `, keyboard)
