@@ -3,7 +3,6 @@ import Bottleneck from "bottleneck";
 import { handleMessage, handleError, percent } from "./utils";
 //import config from "./config.js";
 import { Telegraf, Markup } from 'telegraf';
-import pjson from "../package.json"
 
 //let { amount, initialSell, intervalMs, test, differencelogger } = config;
 
