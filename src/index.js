@@ -309,6 +309,7 @@ async function buyBTC(valor) {
               offerId: buyOffer.offerId,
             });
             bot.telegram.sendMessage(botchat, `Compra de ${valor} em BTC efetuada com sucesso!`);
+            await adjustAmount(); // adjust amount
             resolve(true)
           } catch (error) {
             if (error.error === "Insufficient funds") {
